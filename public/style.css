@@ -1,0 +1,270 @@
+/* Общие настройки в стиле Windows XP Desktop */
+body {
+    background: #16171c; /* Тот самый синий цвет рабочего стола XP */
+    font-family: "Tahoma", "Segoe UI", sans-serif;
+    font-size: 11px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Главное окно приложения */
+.xp-window {
+    background: #ece9d8; /* Классический бежевый цвет окон XP */
+    border: 3px solid #0052e2;
+    border-top-width: 1px;
+    border-radius: 7px 7px 0 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Шапка окна с фирменным синим градиентом Luna */
+.xp-titlebar {
+    background: linear-gradient(to bottom, #0058e6 0%, #0076f6 12%, #0053e2 25%, #0046d5 70%, #0036ca 100%);
+    padding: 5px 8px 6px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #001f6a;
+    letter-spacing: 0.5px;
+}
+
+.xp-title-text {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* Стилизация новой иконки с котиком */
+.xp-icon {
+    width: 16px;
+    height: 18px;
+    margin-right: 6px;
+    object-fit: contain;
+    filter: drop-shadow(0px 1px 0px rgba(0,0,0,0.5));
+}
+
+/* Кнопки управления окном (Свернуть, Развернуть, Закрыть) */
+.xp-control-buttons {
+    display: flex;
+    gap: 2px;
+}
+
+.xp-control-buttons button {
+    box-sizing: border-box;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Кнопка свернуть */
+.xp-btn-minimize {
+    background: linear-gradient(to bottom, #3b8bf4 0%, #1752e2 100%);
+    position: relative;
+}
+.xp-btn-minimize::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    width: 7px;
+    height: 3px;
+    background: #fff;
+}
+
+/* Кнопка развернуть */
+.xp-btn-maximize {
+    background: linear-gradient(to bottom, #3b8bf4 0%, #1752e2 100%);
+    position: relative;
+}
+.xp-btn-maximize::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-top-width: 3px;
+}
+
+/* Кнопка закрыть (фирменная красная) */
+.xp-btn-close {
+    background: linear-gradient(to bottom, #f37b5a 0%, #e34317 100%);
+    border-color: #df3c11 !important;
+    position: relative;
+}
+.xp-btn-close::before, .xp-btn-close::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    width: 10px;
+    height: 2px;
+    background: #fff;
+}
+.xp-btn-close::before { transform: rotate(45deg); }
+.xp-btn-close::after { transform: rotate(-45deg); }
+
+/* Элементы классического меню */
+.xp-menu-bar {
+    background: #ece9d8;
+    border-bottom: 1px solid #d6d3b3;
+    padding: 4px 6px;
+    display: flex;
+    gap: 10px;
+}
+
+.xp-menu-item {
+    padding: 2px 5px;
+    cursor: default;
+}
+
+.xp-menu-item:hover {
+    background: #316ac5;
+    color: #fff;
+}
+
+/* Контентная часть */
+.xp-window-body {
+    padding: 20px;
+    background: #fff;
+    margin: 4px;
+    border: 1px solid #d6d3b3;
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 22px;
+    color: #0022a1; /* Глубокий синий Windows */
+    margin: 0 0 5px 0;
+    font-weight: normal;
+}
+
+.xp-divider {
+    height: 2px;
+    background: linear-gradient(to right, #0022a1 0%, #fff 100%);
+    margin-bottom: 20px;
+}
+
+/* Область Drop Files в стиле "Белого поля со скошенными границами" (Inverted Border) */
+#drop {
+    background: #ffffff;
+    border-top: 2px solid #716f64;
+    border-left: 2px solid #716f64;
+    border-right: 1px solid #f1efe7;
+    border-bottom: 1px solid #f1efe7;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.xp-drop-inner {
+    border: 1px dashed #999;
+    width: 94%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 12px;
+}
+
+#drop:hover .xp-drop-inner {
+    background: #f5f8ff;
+    color: #0022a1;
+    border-color: #0052e2;
+}
+
+/* Стилизация прогрессбара под знаменитые зеленые кубики XP */
+.xp-progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.xp-progress-wrapper label {
+    font-weight: bold;
+    color: #444;
+}
+
+.xp-progress-container {
+    padding: 2px;
+    background: #fff;
+    border-top: 1px solid #716f64;
+    border-left: 1px solid #716f64;
+    border-right: 1px solid #f1efe7;
+    border-bottom: 1px solid #f1efe7;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 16px;
+    border: none;
+    background: #fff;
+}
+
+/* Рендеринг легендарных зеленых блоков шага загрузки */
+progress::-webkit-progress-bar {
+    background: #fff;
+}
+
+progress::-webkit-progress-value {
+    background-image: linear-gradient(to right, 
+        #38d838 0px, #38d838 8px, 
+        #fff 8px, #fff 10px);
+    background-size: 10px 100%;
+    background-color: #24b224;
+}
+
+progress::-moz-progress-bar {
+    background-image: linear-gradient(to right, 
+        #38d838 0px, #38d838 8px, 
+        #fff 8px, #fff 10px);
+    background-size: 10px 100%;
+    background-color: #24b224;
+}
+
+/* Строка состояния (Status Bar) внизу окна */
+.xp-status-bar {
+    background: #ece9d8;
+    border-top: 1px solid #d6d3b3;
+    display: flex;
+    font-size: 11px;
+    padding: 2px 0;
+}
+
+.xp-status-cell {
+    padding: 3px 6px;
+    border-right: 1px solid #d6d3b3;
+    flex-grow: 1;
+}
+
+.xp-status-cell.short {
+    flex-grow: 0;
+    width: 50px;
+    text-align: center;
+    border-right: none;
+}
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center}
+.modal-content{background:#ece9d8;padding:16px;border:2px solid #0052e2;width:320px}
+.modal input{width:100%;box-sizing:border-box;margin:8px 0;padding:6px}
+.modal button{padding:6px 12px}
