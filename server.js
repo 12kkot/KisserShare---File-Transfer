@@ -7,6 +7,7 @@ const crypto=require('crypto');
 
 const app=express();
 const TOKEN=process.env.UPLOAD_TOKEN||'CHANGE_ME';
+const EXPIRY=parseInt(process.env.FILE_EXPIRY)||300000;
 
 const uploadDir=path.join(__dirname,'uploads');
 if(!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
@@ -15,6 +16,8 @@ const upload=multer({dest:uploadDir});
 const files=new Map();
 
 app.use(express.static('public'));
+
+app.get('/health',(req,res)=>res.sendStatus(200));
 
 app.post('/upload',upload.single('file'),(req,res)=>{
  const auth=req.headers.authorization||'';
@@ -37,7 +40,7 @@ app.post('/upload',upload.single('file'),(req,res)=>{
      try{fs.unlinkSync(f.path)}catch(e){}
      files.delete(id);
    }
- },300000);
+ },EXPIRY);
 
  res.json({id});
 });
