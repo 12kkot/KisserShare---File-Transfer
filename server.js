@@ -37,7 +37,7 @@ app.post('/upload',upload.single('file'),(req,res)=>{
      try{fs.unlinkSync(f.path)}catch(e){}
      files.delete(id);
    }
- },60000);
+ },300000);
 
  res.json({id});
 });
