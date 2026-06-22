@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kissershare",
+  "main": "src/entry.py",
+  "compatibility_date": "2026-06-17",
+  "compatibility_flags": ["python_workers"],
+  "assets": {
+    "directory": "./assets/",
+    "binding": "ASSETS"
+  },
+  "r2_buckets": [
+    {
+      "binding": "FILE_STORAGE",
+      "bucket_name": "kissershare-files"
+    }
+  ],
+  "vars": {
+    "FILE_EXPIRY": "300000"
+  },
+  "observability": { "enabled": true }
+}

@@ -1,0 +1,12 @@
+[project]
+name = "kissershare"
+version = "1.0.0"
+description = "KisserShare - File Transfer Utility (Cloudflare Workers + Python)"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "workers-py",
+    "workers-runtime-sdk",
+]

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>KisserShare</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="xp-window">
+    <div class="xp-titlebar">
+        <div class="xp-title-text">
+            <img src="https://i.pinimg.com/236x/ea/6e/ab/ea6eabc9b7ff65d6f87a9691cfad3546.jpg" class="xp-icon" alt="App Icon">
+            KisserShare - File Transfer Utility
+        </div>
+        <div class="xp-control-buttons">
+            <button class="xp-btn-minimize" aria-label="Minimize"></button>
+            <button class="xp-btn-maximize" aria-label="Maximize"></button>
+            <button class="xp-btn-close" aria-label="Close"></button>
+        </div>
+    </div>
+    
+    <div class="xp-menu-bar">
+        <span class="xp-menu-item">File</span>
+        <span class="xp-menu-item">Edit</span>
+        <span class="xp-menu-item">View</span>
+        <span class="xp-menu-item">Help</span>
+    </div>
+
+    <div class="xp-window-body">
+        <h1>KisserShare</h1>
+        <div class="xp-divider"></div>
+        
+        <div id="drop">
+            <div class="xp-drop-inner">
+                <p>Drop file here to start uploading</p>
+            </div>
+        </div>
+        
+        <div class="xp-progress-wrapper">
+            <label for="prog">Status: Ready</label>
+            <div class="xp-progress-container">
+                <progress id="prog" value="0" max="100"></progress>
+            </div>
+        </div>
+    </div>
+    
+    <div class="xp-status-bar">
+        <div class="xp-status-cell">For Help, drag a file into the window.</div>
+        <div class="xp-status-cell short">100%</div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
